@@ -26,6 +26,5 @@ public class MyFirstGame {
 	if (userInput == secret) System.out.println("Вы угадали!");
 	else if (userInput > secret) System.out.println("Введенное вами число меньше того, что загадал компьютер");
 	else System.out.println("Введенное вами число больше того, что загадал компьютер");
-
 	}
 }
