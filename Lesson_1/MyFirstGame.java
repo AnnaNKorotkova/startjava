@@ -1,5 +1,5 @@
 public class MyFirstGame {
-    public static void main(String[] arg) { 
+    public static void main(String[] arg) {
         int secret = 59;
         int userInput = 50;
         int delta = 100 - userInput;
