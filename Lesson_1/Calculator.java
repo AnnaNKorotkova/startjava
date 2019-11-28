@@ -2,19 +2,19 @@ public class Calculator {
     public static void main(String[] arg) {
         int a = 67;
         int b = 18;
-        String act = "+";
+        String mathOperation = "+";
 
-        if (act == "+") {
+        if (mathOperation == "+") {
             System.out.println(a + b);
-        } else if (act == "-") {
+        } else if (mathOperation == "-") {
             System.out.println(a - b);
-        } else if (act == "*") {
+        } else if (mathOperation == "*") {
             System.out.println(a * b);
-        } else if (act == "/") {
+        } else if (mathOperation == "/") {
             System.out.println(a / b);
-        } else if (act == "%") {
+        } else if (mathOperation == "%") {
             System.out.println(a % b);
-        } else if (act == "^") {
+        } else if (mathOperation == "^") {
             int c = 1;
             for (int i = 1; i <= b; i++) {
                 c *= a;
