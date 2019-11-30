@@ -3,7 +3,7 @@ public class Calculator {
     int b;
     String mathOperation;
 
-    public int resultOperation(int a, String mathOperation, int b) {
+    public int calculate(int a, String mathOperation, int b) {
         switch (mathOperation) {
             case "+":
                 return a + b;
