@@ -1,9 +1,21 @@
 public class Calculator {
-    int a;
-    int b;
-    String mathOperation;
+    private int a;
+    private int b;
+    private String mathOperation;
 
-    public int calculate(int a, String mathOperation, int b) {
+    public void setA(int a) {
+        this.a = a;
+    }
+
+    public void setMathOperation(String mathOperation) {
+        this.mathOperation = mathOperation;
+    }    
+
+    public void setB(int b) {
+        this.b = b;
+    }
+
+    public int calculate() {
         switch (mathOperation) {
             case "+":
                 return a + b;

@@ -8,13 +8,13 @@ public class CalculatorTest {
 
         do {
             System.out.print("Введите первое число: ");
-            calc.a = scanner.nextInt();
+            calc.setA(scanner.nextInt());
             System.out.print("Введите операцию: ");
-            calc.mathOperation = scanner.next();
+            calc.setMathOperation(scanner.next());
             System.out.print("Введите второе число: ");
-            calc.b = scanner.nextInt();
+            calc.setB(scanner.nextInt());
 
-            System.out.println("Результат операции: " + calc.calculate(calc.a, calc.mathOperation, calc.b));
+            System.out.println("Результат операции: " + calc.calculate());
 
             do {
                 System.out.print("Хотите продолжить? [Да/Нет]: ");
