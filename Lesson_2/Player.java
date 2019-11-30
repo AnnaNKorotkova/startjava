@@ -1,11 +1,8 @@
 public class Player {
 
-	String name;
+    String name;
 
-	Player(String name) {
-		this.name = name;
-	}
-//	String getName() {
-//		return name;
-//	}
+    Player(String name) {
+        this.name = name;
+    }
 }
