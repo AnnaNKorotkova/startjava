@@ -12,5 +12,5 @@ public class GuessNumberTest {
         GuessNumber number = new GuessNumber(playerOne, playerTwo);
 
         number.play();
-    } 
+    }
 }
