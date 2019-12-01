@@ -1,6 +1,7 @@
+
 public class GuessNumber {
 
-    int secretNumber = (int)(Math.random() * 101);
+    private int secretNumber = (int)(Math.random() * 10);
 
     public String chekNumber(int currentNumber) {
         if (currentNumber > secretNumber) {

@@ -4,38 +4,35 @@ public class GuessNumberTest {
 
     public static void main(String[] arg) {
         Scanner scan = new Scanner(System.in);
+
         System.out.print("Введите имя первого игрока: ");
         Player playerOne = new Player(scan.nextLine());
         System.out.print("Введите имя второго игрока: ");
         Player playerTwo = new Player(scan.nextLine());
-
         GuessNumber number = new GuessNumber();
 
-        int currentPlayerOneNumber;
-        int currentPlayerTwoNumber;
-        String resultOne;
-        String resultTwo;
         String answer = "";
+        String result = "";
 
-        do {    
+        do {
             do {
                 System.out.print(playerOne.name + ", введите число: ");
-                currentPlayerOneNumber = scan.nextInt();
-                resultOne = number.chekNumber(currentPlayerOneNumber);
-                if (resultOne.equals("равно")) {
+                playerOne.setNumber(scan.nextInt());
+                result = number.chekNumber(playerOne.getNumber());
+                if (result.equals("равно")) {
                     break;
                 }
                 System.out.print(playerTwo.name + ", введите число: ");
-                currentPlayerTwoNumber = scan.nextInt();
-                resultTwo = number.chekNumber(currentPlayerTwoNumber);
-                if (resultTwo.equals("равно")) {
+                playerTwo.setNumber(scan.nextInt());
+                result = number.chekNumber(playerTwo.getNumber());
+                if (result.equals("равно")) {
                     break;
-                }
-            } while (!resultOne.equals("равно") && !resultTwo.equals("равно"));
+                } 
+            } while (!result.equals("равно"));
             do {
-                System.out.print("Хотите продолжить? [Да/Нет]: ");
-                answer = scan.next().trim().toLowerCase();
+                    System.out.print("Хотите продолжить? [Да/Нет]: ");
+                    answer = scan.next().trim().toLowerCase();
             } while (!answer.equals("да") && !answer.equals("нет"));
         } while (answer.equals("да"));
-    }
+    } 
 }
