@@ -33,13 +33,13 @@ public class GuessNumber {
         do {
             secretNumber = (int)(Math.random() * 101);
             do {
-                System.out.print(playerOne.name + ", введите число: ");
+                System.out.print(playerOne.getName() + ", введите число: ");
                 playerOne.setNumber(scan.nextInt());
                 result = chekNumber(playerOne.getNumber());
                 if (result.equals("равно")) {
                     break;
                 }
-               System.out.print(playerTwo.name + ", введите число: ");
+               System.out.print(playerTwo.getName() + ", введите число: ");
                 playerTwo.setNumber(scan.nextInt());
                 result = chekNumber(playerTwo.getNumber());
                 if (result.equals("равно")) {

@@ -1,6 +1,6 @@
 public class Player {
 
-    String name;
+    private String name;
     private int number;
 
     Player(String name) {
@@ -13,5 +13,9 @@ public class Player {
 
     public int getNumber() {
         return number;
+    }
+
+    public String getName() {
+        return name;
     }
 }
