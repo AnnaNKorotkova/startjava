@@ -1,6 +1,8 @@
+package com.startjava.lesson_1.game;
+
 public class MyFirstGame {
     public static void main(String[] arg) {
-        int secretNamberNamber = 59;
+        int secretNamber = 59;
         int playerNamber = 50;
         int delta = 100 - playerNamber;
 
