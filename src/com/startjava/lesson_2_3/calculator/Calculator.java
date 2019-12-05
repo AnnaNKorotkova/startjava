@@ -1,5 +1,7 @@
 package com.startjava.lesson_2_3.calculator;
 
+import static java.lang.Math.*;
+
 public class Calculator {
     private int a;
     private int b;
@@ -22,19 +24,19 @@ public class Calculator {
             case "+":
                 return a + b;
             case "-":
-                return a - b;
+                return subtractExact(a, b);
             case "*":
-               return a * b;
+                return a * b;
             case "/":
                 return a / b;
             case "^":
-                int c = 1;
-                for (int i = 1; i <= b; i++) {
-                    c *= a;
-                }
-                return c;
+                return (int) pow(a, b);
             case "%":
                 return a % b;
+            case "hypot":
+                return (int) hypot(a, b);
+            case "min":
+                return min(a, b);
             default:
                 System.out.println("Невозможно распознать действие");
                 return 0;
