@@ -7,11 +7,13 @@ public class GuessNumberTest {
     public static void main(String[] arg) {
         Scanner scan = new Scanner(System.in);
         String answer = "";
+        int[] tryNumbersOne = new int[10];
+        int[] tryNumbersTwo = new int[10];
 
         System.out.print("Введите имя первого игрока: ");
-        Player playerOne = new Player(scan.nextLine());
+        Player playerOne = new Player(scan.nextLine(), tryNumbersOne);
         System.out.print("Введите имя второго игрока: ");
-        Player playerTwo = new Player(scan.nextLine());
+        Player playerTwo = new Player(scan.nextLine(), tryNumbersTwo);
         GuessNumber number = new GuessNumber(playerOne, playerTwo);
 
         do {
