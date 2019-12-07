@@ -53,7 +53,6 @@ public class GuessNumber {
             if (i == 9) {
                 System.out.println("Игрок, " + playerTwo.getName() + ", у вас закончились попытки");
             }
-
         }
     }
 
