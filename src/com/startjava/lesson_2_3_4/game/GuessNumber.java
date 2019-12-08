@@ -9,7 +9,6 @@ public class GuessNumber {
     private Player playerOne;
     private Player playerTwo;
     private int secretNumber;
-    private int[] currentArr;
 
     GuessNumber(Player playerOne, Player playerTwo) {
         this.playerOne = playerOne;
@@ -22,9 +21,8 @@ public class GuessNumber {
 
         for (int i = 0; i < 10; i++) {
             System.out.print(playerOne.getName() + ", введите число: ");
-            playerOne.setNumber(scan.nextInt());
-            playerOne.pushNumber(i);
-            result = checkNumber(playerOne.getNumber());
+            playerOne.addNumber(scan.nextInt(), i);
+            result = checkNumber(playerOne.getTryNumber()[i]);
             if (result) {
                 System.out.println(arrToString(Arrays.copyOf(playerOne.getTryNumber(), i + 1)));
                 System.out.println(arrToString(Arrays.copyOf(playerTwo.getTryNumber(), i)));
@@ -38,9 +36,8 @@ public class GuessNumber {
                 System.out.println("Игрок, " + playerOne.getName() + ", у вас закончились попытки");
             }
             System.out.print(playerTwo.getName() + ", введите число: ");
-            playerTwo.setNumber(scan.nextInt());
-            playerTwo.pushNumber(i);
-            result = checkNumber(playerTwo.getNumber());
+            playerTwo.addNumber(scan.nextInt(), i);
+            result = checkNumber(playerTwo.getTryNumber()[i]);
             if (result) {
                 System.out.println(arrToString(Arrays.copyOf(playerOne.getTryNumber(), i + 1)));
                 System.out.println(arrToString(Arrays.copyOf(playerTwo.getTryNumber(), i + 1)));

@@ -5,7 +5,6 @@ import java.util.Arrays;
 public class Player {
 
     private String name;
-    private int number;
     private int[] tryNumber = new int[10];
 
     Player(String name) {
@@ -20,19 +19,11 @@ public class Player {
         return name;
     }
 
-    public int getNumber() {
-        return number;
+    public void addNumber(int number, int index) {
+        tryNumber[index] = number;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public void pushNumber(int indexArray) {
-        tryNumber[indexArray] = number;
-    }
-
-    public void clear(int indexArray) {
-        Arrays.fill(tryNumber, 0, indexArray, 0);
+    public void clear(int index) {
+        Arrays.fill(tryNumber, 0, index, 0);
     }
 }
