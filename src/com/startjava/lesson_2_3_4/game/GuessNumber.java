@@ -20,12 +20,11 @@ public class GuessNumber {
         secretNumber = (int) (Math.random() * 101);
 
         for (int i = 0; i < 10; i++) {
-            System.out.print(playerOne.getName() + ", введите число: ");
-            playerOne.addNumber(scan.nextInt(), i);
+            enterNumber(playerOne, i);
             result = checkNumber(playerOne.getTryNumber()[i]);
             if (result) {
-                System.out.println(arrToString(Arrays.copyOf(playerOne.getTryNumber(), i + 1)));
-                System.out.println(arrToString(Arrays.copyOf(playerTwo.getTryNumber(), i)));
+                showNumber(playerOne, i + 1);
+                showNumber(playerTwo, i);
                 System.out.println("Игрок " + playerOne.getName() + " угадал число "
                         + secretNumber + " с " + (i + 1) + " попытки");
                 playerOne.clear(i + 1);
@@ -35,12 +34,11 @@ public class GuessNumber {
             if (i == 9) {
                 System.out.println("Игрок, " + playerOne.getName() + ", у вас закончились попытки");
             }
-            System.out.print(playerTwo.getName() + ", введите число: ");
-            playerTwo.addNumber(scan.nextInt(), i);
+            enterNumber(playerTwo, i);
             result = checkNumber(playerTwo.getTryNumber()[i]);
             if (result) {
-                System.out.println(arrToString(Arrays.copyOf(playerOne.getTryNumber(), i + 1)));
-                System.out.println(arrToString(Arrays.copyOf(playerTwo.getTryNumber(), i + 1)));
+                showNumber(playerOne, i + 1);
+                showNumber(playerTwo, i + 1);
                 System.out.println("Игрок " + playerTwo.getName() + " угадал число "
                         + secretNumber + " с " + (i + 1) + " попытки");
                 playerTwo.clear(i + 1);
@@ -54,11 +52,12 @@ public class GuessNumber {
     }
 
     private boolean checkNumber(int currentNumber) {
-        if (currentNumber > secretNumber) {
-            System.out.println("Введенное вами число больше загаданого компьютером");
-            return false;
-        } else if (currentNumber < secretNumber) {
-            System.out.println("Введенное вами число меньше загаданого компьютером");
+        if (currentNumber != secretNumber) {
+            if (currentNumber > secretNumber) {
+                System.out.println("Введенное вами число больше загаданого компьютером");
+            } else {
+                System.out.println("Введенное вами число меньше загаданого компьютером");
+            }
             return false;
         } else {
             System.out.println("Вы угадали!");
@@ -66,12 +65,19 @@ public class GuessNumber {
         }
     }
 
-    private String arrToString(int[] arr) {
-        String str = "";
+    private void showNumber(Player player, int index) {
+        int[] arr;
+        StringBuilder s = new StringBuilder(110);
+        arr = Arrays.copyOf(player.getTryNumber(), index);
         for (int num : arr
         ) {
-            str += num + " ";
+            s.append(num + " ");
         }
-        return str.trim();
+        System.out.println(s);
+    }
+
+    private void enterNumber(Player player, int index) {
+        System.out.print(player.getName() + ", введите число: ");
+        player.addNumber(scan.nextInt(), index);
     }
 }
