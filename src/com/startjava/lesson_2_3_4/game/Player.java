@@ -12,20 +12,12 @@ public class Player {
         this.name = name;
     }
 
-    public int[] getTryNumber() {
-        return tryNumber;
-    }
-
     public String getName() {
         return name;
     }
 
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
+    public int[] getTryNumber() {
+        return tryNumber;
     }
 
     public void addNumber(int number, int index) {
@@ -34,5 +26,13 @@ public class Player {
 
     public void clear(int index) {
         Arrays.fill(tryNumber, 0, index, 0);
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }
