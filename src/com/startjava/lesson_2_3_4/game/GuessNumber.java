@@ -21,8 +21,6 @@ public class GuessNumber {
         for (int i = 0; i < 10; i++) {
             if (makeMove(playerOne, i)) {
                 showNumbers(playerTwo, playerTwo.getCount());
-                playerOne.clear(playerOne.getCount());
-                playerTwo.clear(playerTwo.getCount());
                 break;
             }
             if (i == 9) {
@@ -30,14 +28,14 @@ public class GuessNumber {
             }
             if (makeMove(playerTwo, i)) {
                 showNumbers(playerOne, playerOne.getCount());
-                playerOne.clear(playerOne.getCount());
-                playerTwo.clear(playerTwo.getCount());
                 break;
             }
             if (i == 9) {
                 System.out.println("Игрок, " + playerTwo.getName() + ", у вас закончились попытки");
             }
         }
+        playerOne.clear(playerOne.getCount());
+        playerTwo.clear(playerTwo.getCount());
     }
 
     private boolean makeMove(Player player, int index) {
@@ -70,8 +68,7 @@ public class GuessNumber {
     }
 
     private void showNumbers(Player player, int index) {
-        int[] numbers;
-        numbers = Arrays.copyOf(player.getTryNumber(), index);
+        int[] numbers = Arrays.copyOf(player.getTryNumber(), index);
         System.out.print("Попытки игрока " + player.getName() + ":  ");
         for (int num : numbers) {
             System.out.print(num + " ");
