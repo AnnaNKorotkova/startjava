@@ -6,6 +6,7 @@ public class Player {
 
     private String name;
     private int[] tryNumber = new int[10];
+    private int count;
 
     Player(String name) {
         this.name = name;
@@ -17,6 +18,14 @@ public class Player {
 
     public String getName() {
         return name;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 
     public void addNumber(int number, int index) {
