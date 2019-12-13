@@ -2,8 +2,7 @@
 
 SELECT * FROM jaegers;
 SELECT * FROM jaegers WHERE activeStatus IS TRUE;
-SELECT * FROM jaegers WHERE mark IS Mark-1 and Mark-2;
-SELECT * FROM jaegers WHERE mark IN('Mark-1', 'Mark-6');
+SELECT * FROM jaegers WHERE mark IN ('Mark-1', 'Mark-6');
 SELECT * FROM jaegers ORDER BY mark DESC;
 SELECT * FROM jaegers WHERE launch = (SELECT MIN(launch) FROM jaegers);
 SELECT * FROM jaegers WHERE kaijukill = (SELECT MAX(kaijukill) FROM jaegers) or 
